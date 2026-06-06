@@ -1,20 +1,27 @@
 ```
- ____  _   _ __  __ ____    _      _   _    _    ____  _   _ _____ ____ ____
-| __ )| | | |  \/  | __ )  / \    | | | |  / \  |  _ \| \ | | ____/ ___/ ___|
-|  _ \| | | | |\/| |  _ \ / _ \   | |_| | / _ \ | |_) |  \| |  _| \___ \___ \
-| |_) | |_| | |  | | |_) / ___ \  |  _  |/ ___ \|  _ <| |\  | |___ ___) |__) |
-|____/ \___/|_|  |_|____/_/   \_\ |_| |_/_/   \_\_| \_\_| \_|_____|____/____/
+ ____  _   _ __  __ ____    _         _    ____ _____ _   _ _____
+| __ )| | | |  \/  | __ )  / \       / \  / ___| ____| \ | |_   _|
+|  _ \| | | | |\/| |  _ \ / _ \     / _ \| |  _|  _| |  \| | | |
+| |_) | |_| | |  | | |_) / ___ \   / ___ \ |_| | |___| |\  | | |
+|____/ \___/|_|  |_|____/_/   \_\ /_/   \_\____|_____|_| \_| |_|
+
+ _   _    _    ____  _   _ _____ ____ ____
+| | | |  / \  |  _ \| \ | | ____/ ___/ ___|
+| |_| | / _ \ | |_) |  \| |  _| \___ \___ \
+|  _  |/ ___ \|  _ <| |\  | |___ ___) |__) |
+|_| |_/_/   \_\_| \_\_| \_|_____|____/____/
 ```
 
 <br>
 
 # Bumba CC Harness
 
-Bumba CC Harness is a local, single-operator agent harness that connects a
+Bumba CC Harness is the Claude Code edition of Bumba Agent Harness: a 24/7
+local agent harness for multi-agent, multi-model orchestration. It connects a
 Discord control surface, durable SQLite memory, scheduled automation services,
-and Claude Code CLI execution. This variant is the Claude Code baseline: the
-main bridge path invokes Claude Code with `claude -p` and expects the operator
-to authenticate the Claude Code CLI locally.
+typed agent teams, and Claude Code CLI execution. This variant keeps the
+default bridge path on `claude -p` and expects the operator to authenticate the
+Claude Code CLI locally.
 
 The repository is prepared for public adoption. It does not include private
 deployment history, local machine paths, personal job-search data, resumes,
@@ -24,17 +31,18 @@ an adopter supplies their own profile, criteria, secrets, and approval database.
 
 ## What It Does
 
-- Runs a Discord bot that accepts operator messages and routes them through the
-  bridge.
+- Runs as a 24/7 local control plane for coordinating operator messages,
+  scheduled services, chiefs, specialists, and model backends.
 - Persists conversation state, service state, events, and operational memory in
   SQLite.
 - Supports scheduled services for briefings, calendar/email workflows, job
   search, knowledge review, health checks, and maintenance.
-- Provides a Zone 4 department system where chiefs route work to typed
-  specialists with explicit tool boundaries.
+- Provides a multi-agent Zone 4 department system where chiefs route work to
+  typed specialists with explicit tool boundaries.
 - Vendors two MCP servers, `bumba-memory` and `bumba-sandbox`, so deployments do
   not depend on local absolute paths.
-- Uses Claude Code CLI as the primary execution backend.
+- Uses Claude Code CLI as the primary execution backend while preserving the
+  backend boundary for multi-model extensions.
 
 ## Repository Layout
 
